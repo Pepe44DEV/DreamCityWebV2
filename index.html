@@ -355,7 +355,7 @@
                     <!-- Counter -->
                     <div id="counter">
                         <div class="cell">
-                            <hp id="users" class="counter-value number-count">users</hp>
+                            <p id="users" class="counter-value number-count">users</p>
                             <p class="counter-info">Registrierte Spieler</p>
                         </div>
                         <div class="cell">
@@ -382,7 +382,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        jQuery.get( "https://null-point.de/api.php/?mode=regusers", function( responseText ) {
+        jQuery.get( "https://null-point.de/api.php?mode=regusers", function( responseText ) {
             $( "#users" ).html( responseText );
             //alert( "Load was performed." );
         });
