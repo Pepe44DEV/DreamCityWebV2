@@ -359,7 +359,7 @@
                             <p class="counter-info">Registrierte Spieler</p>
                         </div>
                         <div class="cell">
-                            <div class="counter-value number-count" data-count="31">1</div>
+                            <div id="akSpieler" class="counter-value number-count">1</div>
                             <p class="counter-info">Aktive Spieler</p>
                         </div>
                         <div class="cell">
@@ -386,6 +386,18 @@
             $( "#users" ).html( responseText );
             //alert( "Load was performed." );
         });
+
+        jQuery.getJSON("https://dream-city.net/api.php?mode=online", function (resp) {
+            var players = Object.keys(resp).length;
+            console.log(players);
+            $("#akSpieler").html(players);
+        })
+
+
+
+
+
+
     </script>
 
 
