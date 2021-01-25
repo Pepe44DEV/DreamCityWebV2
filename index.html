@@ -10,11 +10,11 @@
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="Dream-City Website" /> <!-- website name -->
-	<meta property="og:site" content="https://null-point.de" /> <!-- website link -->
+	<meta property="og:site" content="https://dream-city.net" /> <!-- website link -->
 	<meta property="og:title" content="Dream-City RP"/> <!-- title shown in the actual shared post -->
 	<meta property="og:description" content="Offizielle Website des Dream-City Servernetzwerkes. Lebe dein Leben in FiveM auf Dream City und entdecke echten Spielspaß!" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="https://null-point.de/images/video-frame.jpg" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="https://null-point.de" /> <!-- where do you want your post to link to -->
+	<meta property="og:image" content="https://dream-city.net/images/video-frame.jpg" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="https://dream-city.net" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="website" />
 
     <!-- Website Title -->
@@ -81,7 +81,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="https://discord.gg/RqxcC3N"><span class="item-text">DISCORD</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="ts3server://null-point.de?port=9987"><span class="item-text">TEAMSPEAK</span></a>
+                        <a class="dropdown-item" href="ts3server://dream-city.net?port=9987"><span class="item-text">TEAMSPEAK</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
@@ -102,8 +102,8 @@
                         <div class="text-container">
                             <h1>Dream-City <br><span id="js-rotating">PERFORMANCE, HARDCORE RP, WIRTSCHAFT, SELFMADE, EVENTS, MODDED AUTOS, CUSTOM SKINS, TOKOVOIP</span></h1>
                             <p class="p-large">~Lebe dein Leben</p>
-                            <a class="btn-solid-lg page-scroll" href="https://null-point.de/forum/"><i class="fas fa-user-friends"></i> FORUM</a>
-                            <a class="btn-solid-lg page-scroll" href="ts3server://null-point.de?port=9987"><i class="fas fa-headphones"></i> Teamspeak</a>
+                            <a class="btn-solid-lg page-scroll" href="https://forum.dream-city.net/forum/"><i class="fas fa-user-friends"></i> FORUM</a>
+                            <a class="btn-solid-lg page-scroll" href="ts3server://dream-city.net?port=9987"><i class="fas fa-headphones"></i> Teamspeak</a>
                         </div>
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -355,11 +355,11 @@
                     <!-- Counter -->
                     <div id="counter">
                         <div class="cell">
-                            <hp id="users" class="counter-value number-count">users</hp>
+                            <div id="users" class="counter-value number-count">users</div>
                             <p class="counter-info">Registrierte Spieler</p>
                         </div>
                         <div class="cell">
-                            <div class="counter-value number-count" data-count="31">1</div>
+                            <div id="akSpieler" class="counter-value number-count">1</div>
                             <p class="counter-info">Aktive Spieler</p>
                         </div>
                         <div class="cell">
@@ -382,10 +382,22 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        jQuery.get( "https://null-point.de/api.php/?mode=regusers", function( responseText ) {
+        jQuery.get( "https://dream-city.net/api.php?mode=regusers", function( responseText ) {
             $( "#users" ).html( responseText );
             //alert( "Load was performed." );
         });
+
+        jQuery.getJSON("https://dream-city.net/api.php?mode=online", function (resp) {
+            var players = Object.keys(resp).length;
+            console.log(players);
+            $("#akSpieler").html(players);
+        })
+
+
+
+
+
+
     </script>
 
 
